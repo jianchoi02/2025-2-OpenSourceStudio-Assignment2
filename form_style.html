@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form style</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+                
+        input[type="text"], input[type="date"], select, textarea {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            width: 200px;
+            background-color: #f8f9fa;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+            background-color: yellow;
+            border-color: #007bff;
+            outline: none;
+        }
+        
+        
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+        
+        textarea {
+            width: 300px;
+            height: 80px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/action_page.php" target="_blank">
+        <label for="text">text:</label>
+        <input type="text" name="text" value="text"><br>
+        <label for="radio">radio:</label>
+        <input type="radio" id="radio" name="radio" value="radio"><br>
+        <label for="checkbox">checkbox:</label>
+        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox"><br>
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select> <br>
+        <label for="date">date:</label>
+        <input type="date" id="date" name="date" value="date"><br>
+        <label for="textarea">textarea:</label>
+        <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><br>
+        
+    </form>
+</body>
+
+</html>

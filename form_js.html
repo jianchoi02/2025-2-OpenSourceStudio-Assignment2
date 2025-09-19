@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form js example</title>
+</head>
+
+<body>
+    <div class="container">        
+        <h2>1. alert() 예시</h2>
+        <button onclick="showAlert()">Alert 보기</button>
+        
+        <h2>2. confirm() 함수</h2>
+        <button onclick="showConfirm()">Confirm 보기</button>
+        
+        <h2>3. onclick 이벤트</h2>
+        <button onclick="changeText()">텍스트 변경</button>
+        <p id="textDisplay">원래 텍스트</p>
+        
+        <h2>4. onchange 이벤트</h2>
+        <select onchange="handleSelectChange(this)">
+            <option value="apple">사과</option>
+            <option value="banana">바나나</option>
+        </select>
+        <p id="selectResult">선택된 값</p>
+        
+        <h2>5. onmouseover & onmouseout 이벤트</h2>
+        <div onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" 
+             style="padding: 20px; border: 2px solid #ddd; border-radius: 4px; cursor: pointer;">
+            마우스를 올려보세요
+        </div>
+        
+        <h2>6. onkeydown 이벤트</h2>
+        <input type="text" onkeydown="handleKeyDown(event)" placeholder="키를 눌러보세요">
+        <p id="keyResult">눌린 키가 여기에 표시됩니다</p>
+        
+        <h2>7. 입력값 처리</h2>
+        <input type="text" id="userInput" placeholder="이름을 입력하세요">
+        <button onclick="processInput()">입력 처리</button>
+        <p id="inputResult"></p>
+    </div>
+
+<script>
+    function showAlert() {
+        alert("안녕하세요!");
+    }
+    
+    function showConfirm() {
+        var a = confirm("계속?");
+        if (a == true) {
+            alert("확인!");
+        } else {
+            alert("취소!");
+        }
+    }
+    
+    function changeText() {
+        var x = document.getElementById('textDisplay');
+        var y = x.innerHTML;
+        
+        if (y == "원래 텍스트") {
+            x.innerHTML = "바뀜!";
+            x.style.color = "red";
+        } else {
+            x.innerHTML = "원래 텍스트";
+            x.style.color = "black";
+        }
+    }
+    
+    function handleSelectChange(a) {
+        var b = document.getElementById('selectResult');
+        var c = a.value;
+        
+        if (c != "") {
+            b.innerHTML = "선택: " + c;
+            b.style.color = "green";
+        } else {
+            b.innerHTML = "선택된 값";
+            b.style.color = "black";
+        }
+    }
+    
+    function mouseOver(x) {
+        x.style.backgroundColor = "yellow";
+        x.innerHTML = "마우스 올림!";
+    }
+    
+    function mouseOut(x) {
+        x.style.backgroundColor = "white";
+        x.innerHTML = "마우스를 올려보세요";
+    }
+    
+    function handleKeyDown(e) {
+        var x = document.getElementById('keyResult');
+        var key = e.key;
+        var code = e.keyCode;
+        
+        x.innerHTML =  key + " " + code ;
+        x.style.color = "blue";
+    }
+    
+    function processInput() {
+        var input = document.getElementById('userInput').value;
+        var result = document.getElementById('inputResult');
+        
+        if (input == "") {
+            alert("입력하세요!");
+        } else {
+            result.innerHTML = "안녕 " + input + "!";
+            result.style.backgroundColor = "yellow";
+        }
+    }
+</script>
+</body>
+</html>

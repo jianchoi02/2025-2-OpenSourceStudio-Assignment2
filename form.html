@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        #itemInput {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        #itemInput:focus {
+            border-color: #007bff;
+        }
+        
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .add-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .delete-btn {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .delete-btn:hover {
+            background-color: #545b62;
+        }
+        
+        #itemList {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        #itemList li {
+            padding: 8px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .empty-message {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Web page</h1>
+        
+        <div class="input-section">
+            <input type="text" id="itemInput" placeholder="항목을 입력하세요 (쉼표로 구분)" value="appple, banana, kiwi">
+            <button class="btn add-btn" onclick="addItems()">추가</button>
+            <button class="btn delete-btn" onclick="deleteAll()">삭제</button>
+        </div>
+        
+        <ul id="itemList">
+            <li>appple</li>
+            <li>banana</li>
+            <li>kiwi</li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = function() {
+            console.log("로드됨");
+        };
+        
+        function addItems() {
+            var x = document.getElementById('itemInput');
+            var y = x.value;
+            
+            if (y == "") {
+                alert("입력하세요!");
+                return;
+            }
+            
+            var z = y.split(',');
+            var list = document.getElementById('itemList');
+            
+            for (var i = 0; i < z.length; i++) {
+                var li = document.createElement('li');
+                li.innerHTML = z[i];
+                list.appendChild(li);
+            }
+            
+            x.value = "";
+        }
+        
+        function deleteAll() {
+            var x = document.getElementById('itemList');
+            x.innerHTML = "";
+        }
+        
+        document.getElementById('itemInput').onkeypress = function(e) {
+            if (e.keyCode == 13) {
+                addItems();
+            }
+        };
+    </script>
+</body>
+</html>
