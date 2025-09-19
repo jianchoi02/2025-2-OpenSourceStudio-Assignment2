@@ -9,23 +9,45 @@
 
 <body>
     <form action="/action_page.php" target="_blank">
-        <label for="text">text:</label>
-        <input type="text" name="text" value="text"><br>
-        <label for="radio">radio:</label>
-        <input type="radio" id="radio" name="radio" value="radio"><br>
-        <label for="checkbox">checkbox:</label>
-        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox"><br>
-        <label for="cars">Choose a car:</label>
-        <select id="cars" name="cars">
+        <h3>텍스트 입력</h3>
+        <label for="textInput">이름:</label>
+        <input type="text" id="textInput" name="textInput" value="홍길동"><br>
+        <label for="textInput1">주소:</label>
+        <input type="text" id="textInput1" name="textInput1" value="경기도 안양시"><br>
+        <label for="textInput2">이메일:</label>
+        <input type="email" id="textInput2" name="textInput2"><br>
+        
+        <h3>라디오 버튼 선택</h3>
+        <label for="radio1">옵션 1:</label>
+        <input type="radio" id="radio1" name="radioGroup" value="option1"><br>
+        <label for="radio2">옵션 2:</label>
+        <input type="radio" id="radio2" name="radioGroup" value="option2"><br>
+        <label for="radio3">옵션 3:</label>
+        <input type="radio" id="radio3" name="radioGroup" value="option3"><br>
+        
+        <h3>체크박스</h3>
+        <label for="checkbox1">동의함:</label>
+        <input type="checkbox" id="checkbox1" name="checkbox1" value="agree"><br>
+        <label for="checkbox2">뉴스레터 수신:</label>
+        <input type="checkbox" id="checkbox2" name="checkbox2" value="newsletter"><br>
+        
+        <h3>드롭다운 선택</h3>
+        <label for="carSelect">자동차 선택:</label>
+        <select id="carSelect" name="carSelect">
+            <option value="">선택하세요</option>
             <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
             <option value="audi">Audi</option>
         </select> <br>
-        <label for="date">date:</label>
-        <input type="date" id="date" name="date" value="date"><br>
-        <label for="textarea">textarea:</label>
-        <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><br>
+        
+        <h3>날짜 선택</h3>
+        <label for="birthDate">생년월일:</label>
+        <input type="date" id="birthDate" name="birthDate"><br>
+        
+        <h3>메모</h3>
+        <label for="memoText">메모:</label>
+        <textarea id="memoText" name="memoText" rows="4" cols="50" placeholder="메모를 입력하세요"></textarea><br>
         
     </form>
 </body>
